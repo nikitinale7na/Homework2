@@ -1,0 +1,37 @@
+from threading import Thread
+import queue
+from time import sleep
+from random import randint
+
+class Table:
+    def __init__(self, number=int):
+        self.number = number
+        self.guest = None
+
+class Guest(Thread):
+    def __init__(self, name=str):     # у гостя есть имя
+        super().__init__()
+        self.name = name
+    def run(self):
+        guests_names = []
+        for name in guests_names:
+            sleep(randint(3,10))     # время ожидания прихода гостя от 3 до 10 секунд
+            return name
+
+
+class Cafe(Table, Guest):
+    def __init__(self, *tables):
+        super().__init__()
+        self.queue = queue.Queue
+        self.tables = tables
+    def guest_arrival(self, *guests):
+        self.guests = guests
+        guests = 0
+        for i in guests:
+            guests += 1
+            if self.guest is None:
+                self.tables += i
+
+
+
+    def discuss_guests(self):
